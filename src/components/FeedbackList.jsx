@@ -9,11 +9,21 @@ function FeedbackList({feedback}) {
   return (
     <div className='feedback-list'>
         {feedback.map((item) => (
-            <FeedbackItem key={item.id} item={item}></FeedbackItem>
+            <FeedbackItem 
+            key={item.id}
+            item={item}
+            handleDelete={handleDelete}
+            >
+
+            </FeedbackItem>
         ))}
-        FeedbackList
+        
         </div>
   )
+}
+
+FeedbackList.propTypes = {
+
 }
 
 export default FeedbackList
