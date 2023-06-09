@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useContext } from 'react'
+import FeedbackItem from './FeedbackItem'
+import FeedbackContext from '../context/FeedbackContext'
 
-function FeedbackStats ({feedback}) { 
+function FeedbackStats () { 
+    const {feedback} = useContext(FeedbackContext)
 
     //calculate ratings average
     let average = feedback.reduce((accum, curr) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-function RatingSelect() {
+function RatingSelect({select}) {
     const [selected, setSelected] = useState(10)
     // the 10 here means that the 10 will be selected each time, automatically
     const handleChange = (3)
