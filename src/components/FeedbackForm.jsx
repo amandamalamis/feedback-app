@@ -1,4 +1,4 @@
-import { useState , useContext } from 'react'
+import { useState , useContext, useEffect } from 'react'
 import Card from './shared/Card'
 import Button from './shared/Button'
 import RatingSelect from './RatingSelect'
@@ -10,7 +10,12 @@ function FeedbackForm() {
     const [rating, setRating] = useState(10)
     const [message, setMessage] = useState('')
 
-    const {addFeedback} = useContext(FeedbackContext)
+    const { addFeedback, feedbackEdit } = useContext(FeedbackContext) //feedbackEdit is the object
+    
+    useEffect(() => {
+
+    }, [feedbackEdit])
+
     const handleTextChange = (e) => {
         if (text === '') {
             setBtnDisabled(true)
@@ -46,7 +51,9 @@ function FeedbackForm() {
                         onChange={handleTextChange}
                         type="text"
                         placeholder="Write a review"
-                        value='text'></input>
+                        value='text'>
+                            
+                        </input>
 
                     <Button type='submit' version='secondary' isDisabled={btnDisabled}>Send</Button>
                     {/* This is the Button component from the .jsx- use capital B */}

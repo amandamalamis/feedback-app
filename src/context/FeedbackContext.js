@@ -13,6 +13,12 @@ export const FeedbackProvider = ({children }) => {
     }
 ])
 
+const [feedbackEdit, setFeedbackEdit] = useState ({
+    item: {},
+    edit: false,
+})
+
+// add feedback item- function
 const addFeedback = (newFeedback) => {
     newFeedback.id = uuidv4()
     setFeedback([newFeedback, ...feedback])
@@ -20,16 +26,27 @@ const addFeedback = (newFeedback) => {
 
 }
 
+//delete feedback item- function
 const deleteFeedback = (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
         setFeedback(feedback.filter((thisItem) => thisItem.id !== id))
     }
 }
 
+//edit feedback item- function
+const editFeedback = (item) => {
+    setFeedbackEdit( {
+        item,
+        edit: true
+    })
+}
+
 return <FeedbackContext.Provider value = {{ 
     feedback,
     deleteFeedback,
     addFeedback,
+    editFeedback, //the function that runs when we click
+    feedbackEdit //the piece of state that holds the item in the boolean
     }}>
         {children}
     </FeedbackContext.Provider>
