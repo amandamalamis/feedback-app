@@ -1,7 +1,4 @@
-import PropTypes from 'prop-types'
-import { motion, AnimatePresence } from 'framer-motion'
 import { useContext } from 'react'
-import FeedbackItem from './FeedbackItem'
 import FeedbackContext from '../context/FeedbackContext'
 
 function FeedbackStats () { 
@@ -14,17 +11,14 @@ function FeedbackStats () {
     average = average.toFixed(1).replace(/[.,]0$/,'')
     //return to one decimal place, if not trailing 0
 
-    console.log(average)
-
-
-    return <div className='feedback-stats'>
+    return (
+    <div className='feedback-stats'>
         <h4>{feedback.length} Reviews</h4>
         <h4>Average Rating: {(average) ? "0" : average} </h4>
     </div>
+
+    )
 }
 
-FeedbackStats.propTypes = {
-    feedback: PropTypes.array.isRequired,
-}
 
 export default FeedbackStats
