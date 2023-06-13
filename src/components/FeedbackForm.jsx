@@ -18,8 +18,8 @@ function FeedbackForm() {
             setBtnDisabled(false)
             setText(feedbackEdit.item.text)
             setRating(feedbackEdit.item.rating)
-
         }
+
     }, [feedbackEdit])
 
     const handleTextChange = (e) => {
@@ -55,18 +55,18 @@ function FeedbackForm() {
     return (
         <Card>
             <form onSubmit={handleSubmit}>
-                <h2>How would you rate your service with us?</h2>
-                <RatingSelect select={(rating) => console.log(this)} />
+                <h2>How would you rate your service today?</h2>
+                <RatingSelect select={setRating} selected={(rating) => console.log(this)} />
                 <div className="input-group">
                     <input
                         onChange={handleTextChange}
                         type="text"
                         placeholder="Write a review"
-                        value='text'>
+                        value={text}>
 
                         </input>
 
-                    <Button type='submit' version='secondary' isDisabled={btnDisabled}>Send</Button>
+                    <Button type='submit' isDisabled={btnDisabled}>Send</Button>
                     {/* This is the Button component from the .jsx- use capital B */}
                 </div>
 

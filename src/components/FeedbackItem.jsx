@@ -11,7 +11,7 @@ function FeedbackItem({item}) {
         
             <div className='num-display'>{item.rating}</div>
             <button onClick= {() => deleteFeedback(item.id)} className="close">
-                <FaTimes />
+                <FaTimes color="blue" />
             </button>
             <button onClick= {() => editFeedback(item)}  className="edit">
                 <FaEdit color="purple"></FaEdit>
@@ -21,6 +21,9 @@ function FeedbackItem({item}) {
     )
 }
 
+FeedbackItem.propTypes = {
+    item: PropTypes.object.isRequired,
+}
 
 
 export default FeedbackItem
