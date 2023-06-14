@@ -11,9 +11,9 @@
       "text": "This is feedback item 2 from db-json."
     },
     {
-      "id": 3,
+      "text": "This is feedback item 3 from db-json.UPDATED!",
       "rating": 8,
-      "text": "This is feedback item 3 from db-json."
+      "id": 3
     }
   ]
 }

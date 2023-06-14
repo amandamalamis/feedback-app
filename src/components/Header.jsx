@@ -6,14 +6,11 @@ function Header ({text, bgColor, textColor}) {
         color: textColor
     }
     return (
-        <>
         <header style={headerStyles}>
             <div className='container'>
                 <h1>{text}</h1>
             </div>
-
         </header>
-        </>
     )
 }
 

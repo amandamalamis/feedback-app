@@ -1,20 +1,9 @@
 import React from 'react'
-import { useState, useContext, useEffect } from 'react'
-import FeedbackContext from '../context/FeedbackContext'
 
-function RatingSelect({select}) {
-    const [selected, setSelected] = useState(10)
-    // the 10 here means that the 10 will be selected each time, automatically
-
-    const { feedbackEdit } = useContext(FeedbackContext) //feedbackEdit is the object
-
-    useEffect(() => {
-      setSelected(feedbackEdit.item.rating)
-    },[feedbackEdit])
-
+function RatingSelect({select, selected}) {
     
     const handleChange = (e) => {
-      setSelected(+e.currentTarget.value)
+     // setSelected(+e.currentTarget.value)
       select(+e.currentTarget.value)
     }
 
