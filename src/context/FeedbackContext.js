@@ -17,7 +17,7 @@ useEffect(() => {
 
 
 const fetchFeedback = async () => {
-    const response =  await fetch(`/feedback?_sort=id&_order=desc`)
+    const response =  await fetch(`http://localhost:5000/feedback?_sort=id&_order=desc`)
     const data = await response.json()
     setFeedback(data)
     setIsLoading(false)
@@ -69,7 +69,11 @@ const updateFeedback = async (id, updItem) => {
     const data = await response.json()
     
     setFeedback(feedback.map((item) => (item.id === id ? data : item)))
-
+    
+    setFeedbackEdit({
+        item: {},
+        edit: false,
+      })
     } 
 
 return <FeedbackContext.Provider value = {{ 

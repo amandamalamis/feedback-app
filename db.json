@@ -1,11 +1,6 @@
 {
   "feedback": [
     {
-      "id": 1,
-      "rating": 10,
-      "text": "This is feedback item 1 from db-json."
-    },
-    {
       "id": 2,
       "rating": 8,
       "text": "This is feedback item 2 from db-json."
@@ -14,6 +9,16 @@
       "text": "This is feedback item 3 from db-json.UPDATED!",
       "rating": 8,
       "id": 3
+    },
+    {
+      "text": "testttttttttttttttt ",
+      "rating": 8,
+      "id": 4
+    },
+    {
+      "text": "Test  7777777777",
+      "rating": 7,
+      "id": 5
     }
   ]
 }
